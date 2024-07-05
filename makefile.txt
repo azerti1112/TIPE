@@ -1,0 +1,10 @@
+exec : main.o abstraction.o
+	gcc -g main.o abstraction.o -o exec -Wall -Fsanitize=adress
+main.o : main.c
+	gcc -g -c main.c -o main.o -Wall -Fsanitize=adress
+abstraction.o : abstraction.c
+	gcc -g -c abstraction.c -o abstraction.o -Wall -Fsanitize=adress
+clean :
+	rm exec
+	rm abstraction.o
+	rm main.o
